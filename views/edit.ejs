@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Produk</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="/send_url.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="header-logo">Arkademy</a>
+    </header>
+    <div class="container">
+      <div class="container-header">
+        <h1>Edit Produk</h1>
+      </div>
+      <div class="item-form-wrapper">
+        <form action="/update/<%= item.id %>" method="post">
+          
+          <input type="text" name="itemName" value="<%= item.nama_produk %>">
+          <textarea name="itemDesc" type="text" maxlength="70"><%= item.keterangan %></textarea>
+          <input name="itemPrice" type="text" value="<%= item.harga %>">
+          <input name="itemAmount" type="text" value="<%= item.jumlah %>">
+          <input type="submit" value="Perbarui">
+        </form>
+      </div>
+      <a href="/index" class="cancel-button">Kembali</a>
+    </div>
+  </body>
+</html>
